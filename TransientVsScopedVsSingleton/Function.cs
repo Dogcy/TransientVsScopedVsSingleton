@@ -5,7 +5,7 @@ namespace TransientVsScopedVsSingleton
     public class SampleTransient
     {
         public int _count = 0;
-        public Guid _guid= "";
+        public Guid _guid;
         public void CountAdd1()
         {
             _count = _count + 1;
@@ -49,6 +49,24 @@ namespace TransientVsScopedVsSingleton
             _scoped.CountAdd1();
             _singleton.CountAdd1();
             _transient.CountAdd1();
+        }
+    }
+     public interface IFuncDemo
+    {
+        public string Demo();
+    }
+    public class Func1 : IFuncDemo
+    {
+        public string Demo()
+        {
+            return "1";
+        }
+    }
+    public class Func2 : IFuncDemo
+    {
+        public string Demo()
+        {
+            return "2";
         }
     }
 }

@@ -33,6 +33,8 @@ namespace TransientVsScopedVsSingleton
             // 被實例化後就不會消失，程式運行期間只會有一個實例。
             services.AddSingleton<SampleSingleton>(); //一次性
 
+            // useInterFace 可直接更動決定的實體
+            services.AddTransient<IFuncDemo, Func2>();
 
             services.AddTransient<TestDiService>();
 
